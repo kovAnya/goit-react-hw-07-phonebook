@@ -1,13 +1,13 @@
 import { Item, DeleteBtn } from './ContactListItem.styled';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 import PropTypes from 'prop-types';
 
-export const ContactListItem = ({ name, phone }) => {
+export const ContactListItem = ({ id, name, phone }) => {
+  console.log(id);
   const dispatch = useDispatch();
-  const onDelete = evt => {
-    const nameToRemove = evt.currentTarget.dataset.name;
-    dispatch(deleteContact(nameToRemove));
+  const onDelete = () => {
+    dispatch(deleteContact(id));
   };
 
   return (
