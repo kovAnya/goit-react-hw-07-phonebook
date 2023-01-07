@@ -4,7 +4,6 @@ import { deleteContact } from 'redux/operations';
 import PropTypes from 'prop-types';
 
 export const ContactListItem = ({ id, name, phone }) => {
-  console.log(id);
   const dispatch = useDispatch();
   const onDelete = () => {
     dispatch(deleteContact(id));
